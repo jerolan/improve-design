@@ -1,46 +1,31 @@
-# Sin mockups: programar una sesión
+# Wireframe en escala de grises: programar una sesión
 
 [English](README.md) · [Todos los ejemplos](../../README.es.md#casos-de-uso)
 
-Crea una dirección visual terminada y permite programar una sesión.
-El resultado final debe conservar la actividad, duración y fecha elegidas.
-
 ## Prompt
 
-Ejecuta desde la raíz del repositorio.
-
 ```text
-Usa $improve-design para crear un planificador sencillo de concentración.
-No tengo mockups. Diseña una interfaz coherente de alta fidelidad en español.
-Déjame elegir actividad, indicar duración y fecha, revisar, confirmar
-y ver la sesión programada antes de dar feedback.
-Incluye validación útil y navegación hacia atrás que conserve mis elecciones.
-Guarda la propuesta en review/focus-session/.
+Usa $improve-design para crear un wireframe en grises de un planificador.
+Muestra lista y detalle del escenario; inicia, programa la sesión
+hasta su confirmación y muestra el formulario de feedback.
 ```
 
 ## Capturas
 
-<img src="result.jpg" width="260" alt="Una sesión de escritura programada durante 40 minutos con la fecha elegida.">
+| 1. Lista de escenarios | 2. Detalle del escenario |
+| --- | --- |
+| <img src="01-scenarios.jpg" width="220" alt="Lista de escenarios"> | <img src="02-detail.jpg" width="220" alt="Detalle del escenario"> |
 
-El ejemplo define su dirección visual: fondo marfil, texto ciruela,
-controles lavanda, tipografía del sistema y componentes comunes en cada estado.
-No hace falta un mockup separado para comenzar.
+| 3. Escenario interactivo | 4. Formulario de feedback |
+| --- | --- |
+| <img src="03-scenario.jpg" width="220" alt="Escenario interactivo"> | <img src="04-feedback.jpg" width="220" alt="Formulario de feedback"> |
 
-## Probar el prototipo
 
-Descarga este ejemplo y abre `index.html` en tu navegador. El
-[enlace de GitHub](index.html) muestra el código del archivo. Lee la ficha y
-selecciona **Iniciar recorrido**.
 
-1. Elige una actividad.
-2. Indica duración y fecha. Prueba una duración menor de 10 minutos para ver la validación.
-3. Revisa los datos y confirma.
-4. Comprueba que el resultado conserva la actividad, duración y fecha elegidas.
-5. Selecciona **Dar feedback**. También puedes salir antes para una revisión parcial.
+## Probar
 
-Volver conserva las entradas. Reiniciar restablece la sesión simulada y mantiene
-los comentarios. Llegar al resultado de sesión programada completa el recorrido.
+Descarga este ejemplo y abre `index.html` en tu navegador. GitHub muestra el código del [archivo](index.html). Elige el escenario, lee sus pasos, pulsa Iniciar y completa el recorrido hasta su resultado; después deja feedback.
 
-La sesión no crea un evento de calendario real. El feedback permanece en este
-navegador cuando dispone de almacenamiento y se puede exportar. No se envía
-al agente ni a otro dispositivo.
+Los comentarios son efímeros y viven en esta pestaña. Navegar y repetir los conserva; cerrar o recargar los pierde. Descarga el archivo Markdown antes de salir y adjúntalo a tu agente o pega su contenido como prompt. No se envía automáticamente.
+
+Las operaciones son ficticias.

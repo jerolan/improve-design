@@ -1,4 +1,4 @@
 interface:
   display_name: "Improve design"
-  short_description: "Review high-fidelity designs through complete prototypes"
-  default_prompt: "Use $improve-design to review this interface, create a high-fidelity proposal, and let me complete its flows before giving feedback."
+  short_description: "Review designs and complete prototype flows"
+  default_prompt: "Use $improve-design to review this interface, choose the appropriate visual fidelity, and let me complete its flows before giving feedback."

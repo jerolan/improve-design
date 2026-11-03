@@ -20,6 +20,10 @@ Build realistic content, hierarchy, controls, and states immediately. A simple f
 
 Once a direction is accepted, preserve its decisions during feedback. Use a shared set of tokens, components, and sample data so screenshots and interactive states stay aligned. Do not generate a second visual direction accidentally while implementing the prototype.
 
+## Wireframe on request
+
+When requested, use black, white, and gray to review structure, content, and behavior without committing to a visual identity. A wireframe can still be interactive and must complete its advertised journeys. Label it as a wireframe and do not claim high visual fidelity to a colored mockup. Absence of a mockup alone does not mandate this mode.
+
 ## Evidence
 
 Save the reference and a representative prototype capture together with their viewport and state. Explain proposed changes and any known differences. For a responsive reference that exists only at one size, distinguish faithful reproduction of that size from inferred layouts at other sizes.

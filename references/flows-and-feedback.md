@@ -22,7 +22,7 @@ For editing or replacement, compare the current value with the proposed value an
 
 Associate each comment with a scenario or screen and the version under review. Support partial reviews and an explicit reviewed status. Let users retain notes as they move between scenarios and replay them.
 
-Choose storage appropriate to the environment. A downloadable feedback file is sufficient for a small local artifact. Browser storage can preserve notes across reloads on the same origin, but may be unavailable and does not synchronize devices. If storage fails, explain that the note remains temporary and offer export. A running prototype update must not silently destroy the user's unexported feedback.
+Default to temporary, in-memory feedback in the current tab. Preserve it across navigation and replay, but warn that reload or closing the tab loses it. Provide a Markdown download with the scenario, version, completion status, comments, and result context. Tell the user to attach the file to their agent or paste it as a prompt. The agent cannot read these notes automatically. Add durable storage or a submission service only when requested; describe its destination and permissions. A running prototype update must not silently destroy unexported feedback.
 
 Do not tell a user that comments were received unless they were actually read. For device-only comments, ask for an export or use a user-authorized collection channel. Adding a server endpoint or publishing private feedback requires considering the destination and the user's authorization.
 

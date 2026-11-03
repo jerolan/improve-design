@@ -2,46 +2,30 @@
 
 [English](README.md) · [Todos los ejemplos](../../README.es.md#casos-de-uso)
 
-Conserva la dirección visual existente y permite completar la reserva.
-El recibo debe contener el libro y la franja de recogida elegidos.
-
 ## Prompt
-
-Ejecuta desde la raíz del repositorio. El prototipo conserva su interfaz en español.
 
 ```text
 Usa $improve-design con examples/with-mockups/mockup.jpg como referencia.
-Conserva su tipografía, colores, espaciado y contenido.
-Construye la reserva completa: disponibilidad, recogida, revisión,
-confirmación y recibo. Mantén la interfaz en español.
-Presenta el escenario antes de Iniciar y recoge feedback después del resultado.
-Guarda la propuesta en review/book-reservation/.
+Muestra lista y detalle del escenario; inicia la reserva completa,
+confirma la recogida y muestra el formulario de feedback.
 ```
 
 ## Capturas
 
-| Mockup de referencia | Resultado final |
+| 1. Lista de escenarios | 2. Detalle del escenario |
 | --- | --- |
-| <img src="mockup.jpg" width="260" alt="Libro disponible y acción para reservar."> | <img src="result.jpg" width="260" alt="Reserva confirmada con recogida el sábado."> |
+| <img src="01-scenarios.jpg" width="220" alt="Lista de escenarios"> | <img src="02-detail.jpg" width="220" alt="Detalle del escenario"> |
 
-La referencia se creó a partir del estado inicial del ejemplo, con los mismos
-datos y componentes. No es una reproducción independiente de un archivo de diseño
-externo. Los estados posteriores amplían la misma dirección visual.
+| 3. Escenario interactivo | 4. Formulario de feedback |
+| --- | --- |
+| <img src="03-scenario.jpg" width="220" alt="Escenario interactivo"> | <img src="04-feedback.jpg" width="220" alt="Formulario de feedback"> |
 
-## Probar el prototipo
+[Mockup de referencia](mockup.jpg). Se creó desde el estado inicial de este ejemplo; no representa una traducción independiente.
 
-Descarga este ejemplo y abre `index.html` en tu navegador. El
-[enlace de GitHub](index.html) muestra el código del archivo. Lee la ficha y
-selecciona **Iniciar recorrido**.
+## Probar
 
-1. Abre la reserva del libro disponible.
-2. Elige una franja de recogida.
-3. Revisa los datos. Vuelve atrás si quieres cambiar la franja.
-4. Confirma y comprueba que el recibo conserva tu elección.
-5. Selecciona **Dar feedback**. También puedes salir antes para una revisión parcial.
+Descarga este ejemplo y abre `index.html` en tu navegador. GitHub muestra el código del [archivo](index.html). Elige el escenario, lee sus pasos, pulsa Iniciar y completa el recorrido hasta su resultado; después deja feedback.
 
-Volver conserva la selección. Reiniciar restablece la reserva simulada y mantiene
-los comentarios. Llegar al recibo completa el recorrido.
+Los comentarios son efímeros y viven en esta pestaña. Navegar y repetir los conserva; cerrar o recargar los pierde. Descarga el archivo Markdown antes de salir y adjúntalo a tu agente o pega su contenido como prompt. No se envía automáticamente.
 
-Las reservas son ficticias. El feedback permanece en este navegador cuando
-dispone de almacenamiento y se puede exportar. No llega automáticamente al agente.
+Las operaciones son ficticias.

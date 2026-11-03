@@ -2,156 +2,132 @@
 
 [Español](README.es.md)
 
-Improve an interface through high-fidelity mockups and complete interactive
-prototypes. Review the result, collect feedback, and keep the design, prototype,
-and screenshots aligned as decisions change.
+Review interface improvements through a visual proposal, a complete interactive
+journey, and feedback. Preserve existing design decisions when references exist.
+When requested, use a grayscale wireframe to review structure and interaction.
 
 ## Use cases
 
-These two runnable examples show the available starting points. With existing
-mockups, preserve their visual decisions. Without mockups, create a coherent
-direction directly in high fidelity. Either mode can produce a single static
-mockup when interaction is unnecessary.
-
-The examples use Spanish interface copy and fictitious data. Run these prompts
-from this repository's root. In another project, change the paths and use that
-project's design references. These are usage prompts, not transcripts of an
-independent generation run.
+The examples use Spanish interface copy and fictitious data. Each shows four
+review stages: scenario list, scenario details, interaction, and feedback.
+The prompts are examples, not transcripts of independent generation runs.
 
 ### 1. With mockups: reserve a book
 
-Preserve the library's editorial appearance while completing a reservation.
-The chosen collection window must appear in the final receipt.
+Preserve the existing library design and confirm the selected collection window.
 
 #### Prompt
 
 ```text
 Use $improve-design with examples/with-mockups/mockup.jpg as the reference.
 Preserve its typography, colors, spacing, content, and Spanish interface copy.
-Build the complete book reservation flow: view availability, choose a collection
-window, review, confirm, and see the reservation receipt.
-Show the scenario information before Start, then let me use the app without
-review instructions over it. Let me give feedback after reaching the end.
-Save the proposal under review/book-reservation/.
+Show the scenario list and details, then Start the complete reservation:
+availability, collection window, review, confirmation, and receipt.
+Show the feedback form after the result. Save under review/book-reservation/.
 ```
 
 #### Screenshots
 
-| Reference mockup | Completed reservation |
+| 1. Scenario list | 2. Scenario details |
 | --- | --- |
-| <img src="examples/with-mockups/mockup.jpg" width="260" alt="Library book detail with a reserve button."> | <img src="examples/with-mockups/result.jpg" width="260" alt="Confirmed reservation with the chosen Saturday collection window."> |
+| <img src="examples/with-mockups/01-scenarios.jpg" width="220" alt="Scenario list"> | <img src="examples/with-mockups/02-detail.jpg" width="220" alt="Scenario details"> |
 
+| 3. Interactive scenario | 4. Feedback form |
+| --- | --- |
+| <img src="examples/with-mockups/03-scenario.jpg" width="220" alt="Book reservation"> | <img src="examples/with-mockups/04-feedback.jpg" width="220" alt="Feedback form"> |
+
+[Reference mockup](examples/with-mockups/mockup.jpg) ·
 [Example details](examples/with-mockups/README.md) ·
 [Prototype file](examples/with-mockups/index.html)
 
-The reference is a fixture created from the example's initial state, using the
-same content and components. It is not an independent translation from an
-external design tool. The later screens extend that visual direction.
+The reference was created from the example's initial state. It is not an
+independent translation from an external design tool.
 
-### 2. Without mockups: schedule a focus session
+### 2. Wireframe: schedule a focus session
 
-Create the visual direction and a complete flow. The scheduled session must
-preserve the selected activity, duration, and date.
+With no supplied mockups, this example uses black, white, and gray. The session
+must retain the selected activity, duration, and date through confirmation.
+A missing mockup alone does not require a wireframe; choose visual fidelity for
+the task and the user's request.
 
 #### Prompt
 
 ```text
-Use $improve-design to design a simple focus-session planner.
-I have no mockups. Create a coherent high-fidelity interface with Spanish copy.
-Let me choose an activity, adjust the duration and date, review the details,
-confirm, and see the scheduled session before giving feedback.
-Include useful validation and back navigation that preserves my choices.
-Save the proposal under review/focus-session/.
+Use $improve-design to create a grayscale wireframe of a focus-session planner.
+Show the scenario list and details, then Start the interactive flow.
+Let me select an activity, duration and date, review, confirm, and see
+the scheduled session. Show a feedback form after the result.
+Keep the interface in Spanish. Save under review/focus-session/.
 ```
 
 #### Screenshots
 
-<img src="examples/without-mockups/result.jpg" width="260" alt="Scheduled writing session with a duration of 40 minutes and the selected date.">
+| 1. Scenario list | 2. Scenario details |
+| --- | --- |
+| <img src="examples/without-mockups/01-scenarios.jpg" width="220" alt="Scenario list"> | <img src="examples/without-mockups/02-detail.jpg" width="220" alt="Scenario details"> |
+
+| 3. Interactive scenario | 4. Feedback form |
+| --- | --- |
+| <img src="examples/without-mockups/03-scenario.jpg" width="220" alt="Focus session wireframe"> | <img src="examples/without-mockups/04-feedback.jpg" width="220" alt="Feedback form"> |
 
 [Example details](examples/without-mockups/README.md) ·
 [Prototype file](examples/without-mockups/index.html)
 
-For a smaller visual question, ask for a single high-fidelity mockup instead:
-
-```text
-Use $improve-design to improve the hierarchy of this account card.
-A single high-fidelity mockup is enough. I do not need navigation or a scenario index.
-```
-
 ## Installation
 
 Use Node.js 22.20 or later and npm, as required by the
-[skills CLI](https://github.com/vercel-labs/skills#install-a-skill).
-From your project, run:
+[skills CLI](https://github.com/vercel-labs/skills#install-a-skill):
 
 ```bash
 npx skills add jerolan/improve-design
 ```
 
-Select the skill and the agents to install it for. Installation is project-local
-by default. To install only this skill for Codex across projects:
+Select the skill and agents. Installation is project-local by default.
+For Codex across projects:
 
 ```bash
 npx skills add jerolan/improve-design --skill improve-design -a codex -g
 ```
 
-To inspect the available skills without installing:
+To inspect available skills without installing:
 
 ```bash
 npx skills add jerolan/improve-design --list
 ```
 
-See the [CLI installation reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
-for other agents and options.
+## Review and feedback
 
-## Usage and review
+Choose a scenario, read its context and expected result, and select **Start**.
+Complete the interactive flow through its final result before giving feedback.
+For a single visual question, a static mockup may be enough.
 
-Invoke `$improve-design` and describe the interface, the user task, and the
-decisions to preserve. Supply any existing design files, screenshots, or assets.
+Feedback is temporary in the current tab. Navigation and replay retain comments;
+closing or reloading loses them. Download the Markdown comments before leaving.
+Attach the file to your agent or paste its contents as a prompt. Nothing is sent
+or synchronized automatically.
 
-A multi-scenario prototype opens with an index. Selecting a scenario shows its
-context, steps, and expected result. **Start** opens an app-like view without
-review instructions. The user completes the journey, sees its outcome, and gives
-feedback. Free exploration can be an additional option.
-
-A single screen or short scenario does not need an index. High fidelity is
-required in both modes; the amount of interaction depends on the review.
-Before delivery, compare the visual result with the reference and walk every
-advertised flow through its final result.
-
-Partial feedback remains partial. Accepted decisions survive revisions.
-Approving a design does not authorize production implementation or deployment.
+```text
+Use $improve-design to apply the attached feedback. Preserve accepted decisions
+and verify each changed flow through its final result.
+```
 
 ## Run the examples locally
 
-Download or clone this repository and open each example's `index.html`.
-No application dependencies or external services are required.
-
-If Python is already installed, you can also serve the repository locally:
+Download or clone the repository and open each example's `index.html` in a
+browser. GitHub displays the HTML source. No application dependencies or external
+services are needed. With Python installed, run from the repository root:
 
 ```bash
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open [the example with mockups](http://127.0.0.1:8765/examples/with-mockups/) or
-[the example without mockups](http://127.0.0.1:8765/examples/without-mockups/).
-Stop the server with `Ctrl+C`. This address works only on the serving computer.
-Phone access requires an authorized local-network setup.
+Open [with mockups](http://127.0.0.1:8765/examples/with-mockups/) or
+[wireframe](http://127.0.0.1:8765/examples/without-mockups/). Stop with Ctrl+C.
+The address is local to the computer. Operations are fictitious.
 
-The examples simulate their operations in memory. They save feedback in the
-browser when storage is available and let the user download it. Feedback does
-not reach the agent or another device automatically. If browser storage is
-unavailable, export comments before closing the page.
-
-## Compatibility and verification
-
-The skill does not require a specific editor, framework, or plugin. It uses
-the tools available in the project. Rendering, browser interaction, and screenshot
-checks require tools that support them; blocked checks must be reported.
-
-Both example flows were walked through to their outcomes.
-[VALIDATION.md](VALIDATION.md) records the checks and their limits in Spanish.
-The examples do not create real library reservations or calendar events.
+The skill does not require a specific editor, framework, or plugin. Approving
+a design does not authorize implementing or deploying the product.
+See [VALIDATION.md](VALIDATION.md) for verification history.
 
 ## License
 
