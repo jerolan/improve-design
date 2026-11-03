@@ -1,114 +1,158 @@
 # improve-design
 
-Una skill para mejorar interfaces mediante mockups y prototipos de alta fidelidad, recoger feedback y convertirlo en una revisión coherente del diseño.
+[Español](README.es.md)
 
-La fidelidad visual siempre es alta. La complejidad depende de lo que se necesita evaluar: una pantalla puede bastar para revisar composición; un flujo interactivo debe poder completarse de principio a fin.
+Improve an interface through high-fidelity mockups and complete interactive
+prototypes. Review the result, collect feedback, and keep the design, prototype,
+and screenshots aligned as decisions change.
 
-## Los dos modos
+## Use cases
 
-| Modo | Punto de partida | Trabajo |
-| --- | --- | --- |
-| Con mockups | Existe un archivo de diseño, captura o interfaz de referencia. | Conservar sus decisiones visuales, proponer los cambios y comprobar que el prototipo representa esa propuesta. |
-| Sin mockups | No existe una referencia visual definida. | Crear una dirección coherente y materializarla directamente en alta fidelidad. |
+These two runnable examples show the available starting points. With existing
+mockups, preserve their visual decisions. Without mockups, create a coherent
+direction directly in high fidelity. Either mode can produce a single static
+mockup when interaction is unnecessary.
 
-En ambos modos se puede entregar un mockup estático o un prototipo interactivo. Tener mockups de entrada no obliga a construir una aplicación; no tenerlos tampoco implica entregar un wireframe.
+The examples use Spanish interface copy and fictitious data. Run these prompts
+from this repository's root. In another project, change the paths and use that
+project's design references. These are usage prompts, not transcripts of an
+independent generation run.
 
-## Cómo se revisa
+### 1. With mockups: reserve a book
 
-Para varios escenarios, la persona elige uno en el índice. Primero ve el contexto, los pasos y el resultado esperado. Al pulsar **Iniciar**, entra a una experiencia como la app, sin instrucciones de revisión encima. Ejecuta las acciones hasta el resultado final y después deja su feedback. La navegación libre puede añadirse como opción.
+Preserve the library's editorial appearance while completing a reservation.
+The chosen collection window must appear in the final receipt.
 
-La skill exige comprobar dos cosas por separado: que la propuesta se parece al diseño que se está revisando y que cada recorrido anunciado llega a su final. Las revisiones parciales siguen siendo parciales. Las decisiones aprobadas se conservan y el diseño, el prototipo y las capturas se actualizan juntos.
-
-## Instalación en Codex
-
-Copia este repositorio en una carpeta de skills con el nombre `improve-design`. El archivo `SKILL.md` debe quedar directamente dentro de esa carpeta.
-
-En macOS o Linux, con la ubicación predeterminada:
-
-```sh
-git clone https://github.com/jerolan/improve-design.git ~/.codex/skills/improve-design
-```
-
-En Windows PowerShell:
-
-```powershell
-git clone https://github.com/jerolan/improve-design.git "$env:USERPROFILE\.codex\skills\improve-design"
-```
-
-Si usas un `CODEX_HOME` personalizado, coloca la carpeta dentro de `CODEX_HOME/skills`. Si ya existe una instalación, revisa sus cambios antes de actualizarla; no clones encima. Reinicia Codex para que detecte la skill.
-
-También puedes pedirle a la skill de instalación de Codex que instale `jerolan/improve-design`, usando la raíz del repositorio como carpeta de la skill y `improve-design` como nombre.
-
-El formato `SKILL.md` puede utilizarse con otros agentes que lo admitan. Su descubrimiento e instalación dependen del agente. `agents/openai.yaml` contiene metadatos opcionales para Codex.
-
-## Uso
+#### Prompt
 
 ```text
-Usa $improve-design para mejorar esta interfaz. Conserva las decisiones ya
-confirmadas y dame una propuesta de alta fidelidad que pueda revisar.
+Use $improve-design with examples/with-mockups/mockup.jpg as the reference.
+Preserve its typography, colors, spacing, content, and Spanish interface copy.
+Build the complete book reservation flow: view availability, choose a collection
+window, review, confirm, and see the reservation receipt.
+Show the scenario information before Start, then let me use the app without
+review instructions over it. Let me give feedback after reaching the end.
+Save the proposal under review/book-reservation/.
 ```
 
-Con una referencia:
+#### Screenshots
+
+| Reference mockup | Completed reservation |
+| --- | --- |
+| <img src="examples/with-mockups/mockup.jpg" width="260" alt="Library book detail with a reserve button."> | <img src="examples/with-mockups/result.jpg" width="260" alt="Confirmed reservation with the chosen Saturday collection window."> |
+
+[Example details](examples/with-mockups/README.md) ·
+[Prototype file](examples/with-mockups/index.html)
+
+The reference is a fixture created from the example's initial state, using the
+same content and components. It is not an independent translation from an
+external design tool. The later screens extend that visual direction.
+
+### 2. Without mockups: schedule a focus session
+
+Create the visual direction and a complete flow. The scheduled session must
+preserve the selected activity, duration, and date.
+
+#### Prompt
 
 ```text
-Usa $improve-design con estos mockups. Respeta su tipografía, componentes,
-imágenes y contenido. Prototipa la reserva completa, incluida su confirmación,
-y comprueba el resultado visual antes de entregarlo.
+Use $improve-design to design a simple focus-session planner.
+I have no mockups. Create a coherent high-fidelity interface with Spanish copy.
+Let me choose an activity, adjust the duration and date, review the details,
+confirm, and see the scheduled session before giving feedback.
+Include useful validation and back navigation that preserves my choices.
+Save the proposal under review/focus-session/.
 ```
 
-Sin una referencia:
+#### Screenshots
+
+<img src="examples/without-mockups/result.jpg" width="260" alt="Scheduled writing session with a duration of 40 minutes and the selected date.">
+
+[Example details](examples/without-mockups/README.md) ·
+[Prototype file](examples/without-mockups/index.html)
+
+For a smaller visual question, ask for a single high-fidelity mockup instead:
 
 ```text
-Usa $improve-design para diseñar un planificador de sesiones de concentración.
-No tengo mockups. Crea una propuesta de alta fidelidad, deja que programe una
-sesión hasta ver el resultado y recoge mi feedback al terminar.
+Use $improve-design to improve the hierarchy of this account card.
+A single high-fidelity mockup is enough. I do not need navigation or a scenario index.
 ```
 
-Para una revisión visual breve:
+## Installation
 
-```text
-Usa $improve-design para mejorar la jerarquía de esta tarjeta. Un mockup de
-alta fidelidad basta; no necesito navegación ni un índice de escenarios.
+Use Node.js 22.20 or later and npm, as required by the
+[skills CLI](https://github.com/vercel-labs/skills#install-a-skill).
+From your project, run:
+
+```bash
+npx skills add jerolan/improve-design
 ```
 
-## Dos ejemplos ejecutables
+Select the skill and the agents to install it for. Installation is project-local
+by default. To install only this skill for Codex across projects:
 
-1. [Con mockups: reservar un libro](examples/with-mockups/README.md). Incluye la referencia visual y un recorrido completo para seleccionar recogida, confirmar y ver la reserva.
-2. [Sin mockups: programar una sesión](examples/without-mockups/README.md). Define su dirección visual y permite elegir actividad, duración y fecha hasta obtener una sesión programada.
+```bash
+npx skills add jerolan/improve-design --skill improve-design -a codex -g
+```
 
-Para verlos, descarga o clona el repositorio y abre el `index.html` de cada ejemplo. No hay dependencias de aplicación ni servicios externos. Si prefieres servirlos localmente y ya tienes Python:
+To inspect the available skills without installing:
 
-```sh
+```bash
+npx skills add jerolan/improve-design --list
+```
+
+See the [CLI installation reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
+for other agents and options.
+
+## Usage and review
+
+Invoke `$improve-design` and describe the interface, the user task, and the
+decisions to preserve. Supply any existing design files, screenshots, or assets.
+
+A multi-scenario prototype opens with an index. Selecting a scenario shows its
+context, steps, and expected result. **Start** opens an app-like view without
+review instructions. The user completes the journey, sees its outcome, and gives
+feedback. Free exploration can be an additional option.
+
+A single screen or short scenario does not need an index. High fidelity is
+required in both modes; the amount of interaction depends on the review.
+Before delivery, compare the visual result with the reference and walk every
+advertised flow through its final result.
+
+Partial feedback remains partial. Accepted decisions survive revisions.
+Approving a design does not authorize production implementation or deployment.
+
+## Run the examples locally
+
+Download or clone this repository and open each example's `index.html`.
+No application dependencies or external services are required.
+
+If Python is already installed, you can also serve the repository locally:
+
+```bash
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Desde la raíz del repositorio, abre:
+Open [the example with mockups](http://127.0.0.1:8765/examples/with-mockups/) or
+[the example without mockups](http://127.0.0.1:8765/examples/without-mockups/).
+Stop the server with `Ctrl+C`. This address works only on the serving computer.
+Phone access requires an authorized local-network setup.
 
-- [Ejemplo con mockups](http://127.0.0.1:8765/examples/with-mockups/).
-- [Ejemplo sin mockups](http://127.0.0.1:8765/examples/without-mockups/).
+The examples simulate their operations in memory. They save feedback in the
+browser when storage is available and let the user download it. Feedback does
+not reach the agent or another device automatically. If browser storage is
+unavailable, export comments before closing the page.
 
-Detén el servidor con `Ctrl+C`. Esta dirección sólo funciona en la computadora que lo ejecuta. El acceso desde un teléfono requiere una configuración de red local autorizada; no se publica una web al instalar la skill.
+## Compatibility and verification
 
-Los ejemplos usan datos ficticios y simulan las operaciones en memoria. Guardan comentarios en el navegador cuando está disponible y permiten descargarlos. No envían feedback al agente ni entre dispositivos. Al abrir archivos directamente, el almacenamiento puede no estar disponible; el ejemplo avisa y mantiene la exportación.
+The skill does not require a specific editor, framework, or plugin. It uses
+the tools available in the project. Rendering, browser interaction, and screenshot
+checks require tools that support them; blocked checks must be reported.
 
-## Herramientas y límites
+Both example flows were walked through to their outcomes.
+[VALIDATION.md](VALIDATION.md) records the checks and their limits in Spanish.
+The examples do not create real library reservations or calendar events.
 
-La skill no exige OpenPencil, Figma, un framework ni otra skill. Usa las herramientas disponibles para el proyecto. Las funciones de edición visual, navegador o capturas requieren herramientas que las permitan; si una comprobación no puede realizarse, debe indicarse.
-
-No incluye autenticación, backend de feedback ni publicación automática. Aprobar un diseño no autoriza implementar el producto o desplegarlo. La comprobación manual de ejemplos se documenta en [VALIDATION.md](VALIDATION.md).
-
-## Estructura
-
-```text
-SKILL.md
-agents/openai.yaml
-references/fidelity.md
-references/flows-and-feedback.md
-examples/with-mockups/
-examples/without-mockups/
-LICENSE
-```
-
-## Licencia
+## License
 
 [MIT](LICENSE), Copyright 2026 jerolan.

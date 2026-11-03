@@ -1,34 +1,47 @@
-# Con mockups: reservar un libro
+# With mockups: reserve a book
 
-## Petición
+[Español](README.es.md) · [All examples](../../README.md#use-cases)
+
+Preserve the existing visual direction and let the user complete the reservation.
+The receipt must contain the selected book and collection window.
+
+## Prompt
+
+Run from the repository root. The prototype keeps its Spanish interface copy.
 
 ```text
-Usa $improve-design con mockup.jpg como referencia. Conserva la apariencia
-editorial de la biblioteca y construye el recorrido para reservar el libro:
-consultar disponibilidad, elegir recogida, confirmar y ver la reserva.
-Quiero dar feedback después de llegar al final.
+Use $improve-design with examples/with-mockups/mockup.jpg as the reference.
+Preserve its typography, colors, spacing, and content.
+Build the full reservation flow: availability, collection window, review,
+confirmation, and receipt. Keep the interface in Spanish.
+Present the scenario before Start and collect feedback after the final result.
+Save the proposal under review/book-reservation/.
 ```
 
-## Referencia y alcance
+## Screenshots
 
-[mockup.jpg](mockup.jpg) muestra el estado inicial de la app a 390 × 844. Es una referencia de ejemplo creada para este repositorio, capturada desde ese estado con los mismos datos y componentes. No procede de un producto externo. El resto del recorrido amplía esa dirección visual; no afirma reproducir mockups de pantallas que no existen.
+| Reference mockup | Final result |
+| --- | --- |
+| <img src="mockup.jpg" width="260" alt="Available book and reservation action."> | <img src="result.jpg" width="260" alt="Confirmed reservation with Saturday collection."> |
 
-![Mockup de referencia](mockup.jpg)
+The reference was created from this example's initial state with the same data
+and components. It is not an independent reproduction of an external design file.
+Later states extend the same visual direction.
 
-## Probar
+## Try the prototype
 
-Abre [index.html](index.html). Lee la ficha, pulsa Iniciar y completa:
+Download this example and open `index.html` in your browser. GitHub's
+[index.html link](index.html) shows the source file. Read the introduction and
+select **Iniciar recorrido**.
 
-1. Consulta el libro disponible.
-2. Selecciona el día de recogida.
-3. Revisa y confirma tu elección.
-4. Comprueba el recibo con el libro y el día elegido.
-5. Pulsa Dar feedback. Puedes salir antes y guardar una revisión parcial.
+1. Open the available book's reservation.
+2. Choose a collection window.
+3. Review the details. Go back if you want to change the window.
+4. Confirm and check that the receipt preserves your selection.
+5. Select **Dar feedback**. You can also exit earlier for a partial review.
 
-Volver conserva la selección. Reiniciar restablece la reserva simulada y conserva los comentarios. El botón final sólo marca el recorrido como completado después de confirmar.
+Back preserves the selection. Replay resets the simulated reservation and keeps
+comments. Reaching the receipt completes the journey.
 
-Las reservas son ficticias y no se envían. El ejemplo guarda comentarios en este navegador cuando dispone de almacenamiento y permite descargarlos. El agente no los recibe automáticamente.
-
-## Resultado del recorrido
-
-![Reserva confirmada](result.jpg)
+Reservations are fictitious. Feedback stays in this browser when storage is
+available and can be exported. It does not reach the agent automatically.
