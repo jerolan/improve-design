@@ -2,9 +2,15 @@
 
 [English](README.md)
 
-Revisa mejoras de interfaz mediante una propuesta visual, recorridos interactivos
-completos y feedback. Conserva las decisiones existentes cuando hay referencias.
+Prepara mejoras de interfaz para revisión mediante propuestas visuales o recorridos
+interactivos completos. Conserva las decisiones existentes cuando hay referencias.
 Cuando se solicite, usa un wireframe en grises para revisar estructura e interacción.
+
+Parte de una app existente, capturas, archivos de diseño o una descripción. No exige
+un editor de diseño ni una especificación formal. El alcance sigue la petición:
+una propuesta por defecto, con alternativas cuando se pidan o ayuden a resolver una
+pregunta de diseño abierta. La skill funciona por sí sola; `prototype` puede
+complementarla cuando explorar alternativas forme parte del encargo.
 
 ## Casos de uso
 
@@ -97,6 +103,11 @@ npx skills add jerolan/improve-design --list
 ```
 
 ## Revisión y feedback
+
+Para una misma app y encargo de revisión, usa una entrada común con los recorridos
+agrupados por contexto y los comentarios reunidos. Una vez comprobada y lista la
+propuesta, el agente la entrega. Revisa cuando puedas y vuelve con feedback;
+no se exige aceptación inmediata.
 
 Elige un escenario, lee su contexto y resultado esperado y pulsa **Iniciar**.
 Completa el recorrido hasta el resultado final antes de dar feedback. Para una

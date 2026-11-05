@@ -2,9 +2,15 @@
 
 [Español](README.es.md)
 
-Review interface improvements through a visual proposal, a complete interactive
-journey, and feedback. Preserve existing design decisions when references exist.
+Prepare interface improvements for review through visual proposals or complete
+interactive journeys. Preserve existing design decisions when references exist.
 When requested, use a grayscale wireframe to review structure and interaction.
+
+Start from an existing app, screenshots, design files, or a description. No design
+editor or formal specification is required. The scope follows the request: one
+proposal by default, with alternatives when requested or useful for an open
+design question. The skill works on its own; `prototype` can complement it when
+exploring alternatives is part of the task.
 
 ## Use cases
 
@@ -96,6 +102,11 @@ npx skills add jerolan/improve-design --list
 ```
 
 ## Review and feedback
+
+For one app and review assignment, use one shared entry point with scenarios
+grouped by context and comments collected together. Once the proposal is checked
+and ready, the agent hands it over. Review whenever convenient and return with
+feedback; immediate acceptance is not required.
 
 Choose a scenario, read its context and expected result, and select **Start**.
 Complete the interactive flow through its final result before giving feedback.
